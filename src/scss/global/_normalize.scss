@@ -1,0 +1,49 @@
+@use '../utils'as utils;
+@use './colors'as *;
+@use '../utils/functions'as fn;
+@use '../utils/fonts'as *;
+
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-stroke-width: 0.1px;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+a,
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+body {
+  background: $white;
+  color: $text;
+  font-family: $base-font, sans-serif;
+  font-weight: 400;
+  font-size: fn.rem(16);
+  min-height: 100vh;
+}
