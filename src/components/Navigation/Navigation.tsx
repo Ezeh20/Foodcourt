@@ -10,7 +10,7 @@ interface Nav {
 export const Navigation = ({ alt }:Nav) => {
   return (
     <header className={alt ? `${styles.header} ${styles.headerAlt}`: `${styles.header}`}>
-        <Container>
+        <Container alt>
             <nav className={styles.nav}>
               <Image src={logo} alt={'moneey app'} className={styles.imgContainer}/>
             </nav>

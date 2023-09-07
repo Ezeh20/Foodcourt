@@ -9,6 +9,7 @@ interface Type {
   icon?: boolean;
   placeHolder?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
 export const Input = ({
@@ -18,16 +19,20 @@ export const Input = ({
   icon,
   placeHolder = "some placeholder",
   onClick,
+  onChange,
   ...props
 }: Type) => {
   return (
     <div className={styles.main}>
-      <label htmlFor={id} className={styles.label}>{label}</label>
+      <label htmlFor={id} className={styles.label}>
+        {label}
+      </label>
       <div className={styles.inputBg}>
         <input
           id={id}
           type={type}
           placeholder={placeHolder}
+          onChange={onChange}
           {...props}
           className={styles.input}
         />

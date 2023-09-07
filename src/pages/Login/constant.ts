@@ -14,6 +14,8 @@ export const constants = {
   HEADING: "Hi there, see what’s new",
   SUB_HEADING:
     "Here’s how Foodcourt helps you manage your daily operations and ensure your riders are efficient",
+  LOGIN_HEADER:'Login to your dashboard',
+  LOGIN_SUB:'Provide details to login to your account',
   WRITE_UP: [
     {
       id: 0,

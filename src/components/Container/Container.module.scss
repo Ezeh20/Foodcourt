@@ -13,3 +13,21 @@
         margin-left: 250px;
     }
 }
+
+.containerAlt {
+    max-width: 1440px;
+    margin-inline: 1.5rem;
+
+    @media screen and (min-width: 1024px) {
+        margin-right: 1.5rem;
+    }
+
+    @media screen and (min-width: 1440px) {
+        margin-left: auto;
+        margin-inline: auto;
+    }
+
+    @media screen and (min-width: 1650px) {
+        margin-left: auto;
+    }
+}

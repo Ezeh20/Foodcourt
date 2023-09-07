@@ -2,21 +2,54 @@ import Container from "../../components/Container";
 import Image from "../../components/Image";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 import checkmark from "../../../public/assets/tick-circle.svg";
 import logo from "../../../public/logo.svg";
 import styles from "./Login.module.scss";
 import { constants, ITM } from "./constant";
-const { HEADING, SUB_HEADING, WRITE_UP } = constants;
+import { useNavigate } from "react-router-dom";
+const { HEADING, SUB_HEADING, WRITE_UP, LOGIN_HEADER, LOGIN_SUB } = constants;
 
 export const Login = () => {
   const [type, setType] = useState("password");
+  const [loading, setLoading] = useState(false);
+  const { user, setUser } = useContext(UserContext);
+  const { email, password } = user;
+  const nav = useNavigate();
 
+  const mockEmail = "Cokitchen222@gmail.com";
+  const mockPassword = "12345678";
+
+  //toggle the password visibility
   const onClick = () => {
     if (type === "password") {
       setType("text");
     } else if (type === "text") {
       setType("password");
+    }
+  };
+
+  //setEmail
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUser({ ...user, email: e.target.value });
+  };
+
+  //setPassword
+  const passwordOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUser({ ...user, password: e.target.value });
+  };
+
+  //authenticate the email and password if vaild redirect to the details page
+  const onSubmit = () => {
+    if (email === mockEmail && password === mockPassword) {
+      setUser({ ...user, authenticated: true });
+      setLoading((prev) => !prev);
+      setTimeout(() => {
+        nav("/profile");
+      }, 2000);
+    } else {
+      alert("invalid email or password");
     }
   };
 
@@ -64,10 +97,8 @@ export const Login = () => {
               <div className={styles.formContainer}>
                 <div className={styles.content}>
                   <div className={styles.formHeading}>
-                    <p className={styles.formHeader}>Login to your dashboard</p>
-                    <p className={styles.formSub}>
-                      Provide details to login to your account
-                    </p>
+                    <p className={styles.formHeader}>{LOGIN_HEADER}</p>
+                    <p className={styles.formSub}>{LOGIN_SUB}</p>
                   </div>
                   <form className={styles.form}>
                     <Input
@@ -75,6 +106,7 @@ export const Login = () => {
                       label="Email"
                       id="email"
                       placeHolder="email"
+                      onChange={(e) => onChange(e)}
                     />
                     <Input
                       type={type}
@@ -82,9 +114,17 @@ export const Login = () => {
                       id="password"
                       placeHolder="password"
                       onClick={onClick}
+                      onChange={(e) => {
+                        passwordOnChange(e);
+                      }}
                       icon
                     />
-                    <Button label="Login" className={styles.btn}/>
+                    <Button
+                      label={loading ? "Loading...." : "Login"}
+                      type="button"
+                      className={styles.btn}
+                      onClick={onSubmit}
+                    />
                   </form>
                 </div>
               </div>
