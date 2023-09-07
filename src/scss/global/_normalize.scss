@@ -46,6 +46,7 @@ input::-ms-clear {
 }
 body {
   background: $white;
+  overflow: hidden;
   color: $text;
   font-family: $base-font, sans-serif;
   font-weight: 400;

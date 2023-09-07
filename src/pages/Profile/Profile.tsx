@@ -19,14 +19,14 @@ export const Profile = () => {
   const ceo = data?.company.ceo;
   const cto = data?.company.cto;
 
-  console.log(user);
-
+  //unAuthenticate the user after 2min, the user will redirect back to the login page
   useEffect(() => {
+    const maxTime = 120000;
     if (!loading) {
       setTimeout(() => {
         setUser({ ...user, authenticated: false });
         nav("/");
-      }, 2000);
+      }, maxTime);
     }
   }, [nav, loading, setUser, user]);
 
