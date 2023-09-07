@@ -1,0 +1,27 @@
+@use '../../scss/utils/functions'as fn;
+
+.header {
+    padding: fn.rem(15) 0 fn.rem(10);
+
+    @media screen and (min-width: 768px) {
+        padding: fn.rem(35) 0 fn.rem(15);
+    }
+
+    .nav {
+        .imgContainer {
+            width: fn.rem(75);
+            display: flex;
+            margin-left: fn.rem(-10);
+            align-items: center;
+
+            @media screen and (min-width:768px) {
+                width: initial;
+                margin-left: fn.rem(-12);
+            }
+        }
+    }
+}
+
+.headerAlt{
+    box-shadow: 0 0 0 .7px #DCE2EA;
+}
