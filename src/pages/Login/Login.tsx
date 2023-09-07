@@ -103,6 +103,7 @@ export const Login = () => {
                   <form className={styles.form}>
                     <Input
                       type="text"
+                      value={email}
                       label="Email"
                       id="email"
                       placeHolder="email"
@@ -110,6 +111,7 @@ export const Login = () => {
                     />
                     <Input
                       type={type}
+                      value={password}
                       label="Password"
                       id="password"
                       placeHolder="password"

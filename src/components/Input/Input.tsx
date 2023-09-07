@@ -8,6 +8,7 @@ interface Type {
   type: string;
   icon?: boolean;
   placeHolder?: string;
+  value?: string | number;
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
@@ -18,6 +19,7 @@ export const Input = ({
   type,
   icon,
   placeHolder = "some placeholder",
+  value,
   onClick,
   onChange,
   ...props
@@ -31,6 +33,7 @@ export const Input = ({
         <input
           id={id}
           type={type}
+          value={value}
           placeholder={placeHolder}
           onChange={onChange}
           {...props}
