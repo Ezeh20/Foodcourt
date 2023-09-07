@@ -1,7 +1,15 @@
-.container{
-    max-width: 1440px;
+.container {
     margin-inline: 1.5rem;
-    @media screen and (min-width: 1440px){
-        margin-inline: auto;
+
+    @media screen and (min-width: 1024px) {
+        margin-right: 0;
+    }
+
+    @media screen and (min-width: 1440px) {
+        margin-left: 65px;
+    }
+
+    @media screen and (min-width: 1650px) {
+        margin-left: 250px;
     }
 }

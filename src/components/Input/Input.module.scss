@@ -1,0 +1,40 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    .label {
+        font-size: 16px;
+        color: #1A1A1A;
+        margin-left: 2px;
+    }
+
+    .inputBg {
+        position: relative;
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        border-radius: 12px;
+        padding: 6px;
+        background: #F0F0F0;
+
+        .input {
+            width: 100%;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #1A1A1A;
+            font-size: 18px;
+            color: #1A1A1A;
+        }
+
+        .eye {
+            position: absolute;
+            top: 35%;
+            right: 1.7rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

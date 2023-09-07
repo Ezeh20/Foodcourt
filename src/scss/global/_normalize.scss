@@ -34,11 +34,16 @@ button {
   justify-content: center;
 }
 
-button {
+button,
+input {
   outline: none;
   border: none;
 }
 
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
 body {
   background: $white;
   color: $text;
