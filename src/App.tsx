@@ -9,10 +9,9 @@ export const App = () => {
   return (
     <Routes>
       <Route index element={<Login />} />
-      <Route path="profile" element={<Profile />} />
-      {/* {user.authenticated ? (
-        <Route path="details" element={<Details />} />
-      ) : undefined} */}
+      {user.authenticated ? (
+        <Route path="profile" element={<Profile />} />
+      ) : undefined}
       <Route path="*" element={<h1>Unauthorized</h1>} />
     </Routes>
   );

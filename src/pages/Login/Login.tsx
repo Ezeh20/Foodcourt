@@ -127,11 +127,16 @@ export const Login = () => {
                       className={styles.btn}
                       onClick={onSubmit}
                     />
+                   
                   </form>
+                  <p className={styles.mock}>mockEmail : Cokitchen222@gmail.com</p>
+                    <p className={styles.mock}>mockPassword : 12345678</p>
                 </div>
               </div>
             </section>
           </div>
+
+          
         </Container>
       </div>
     </>
