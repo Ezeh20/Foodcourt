@@ -65,7 +65,7 @@
 
                 .bottom {
                     display: flex;
-                    flex-direction: column;
+                    flex-wrap: wrap;
                     margin-top: fn.rem(30);
                     margin-left: -10px;
                     gap: fn.rem(30);
@@ -136,16 +136,16 @@
 
         .auth {
             width: 100%;
-            min-height: 100vh;
             background: #FEF0F2;
 
             @media screen and (min-width:1024px) {
                 padding: fn.rem(165) 0;
+                min-height: 100vh;
                 width: 65%;
             }
 
             .formContainer {
-                margin: 3rem 1rem;
+                margin: 2rem 1.5rem;
                 background-color: #fff;
                 border-radius: fn.rem(10);
                 max-width: 100%;
@@ -167,7 +167,7 @@
                         margin-bottom: fn.rem(30);
 
                         .formHeader {
-                            font-size: fn.rem(16);
+                            font-size: fn.rem(20);
                             font-family: 700;
                             color: #1A1A1A;
                         }
@@ -199,9 +199,10 @@
                         gap: fn.rem(26);
                         margin-top: fn.rem(48);
 
-                        .btn{
+                        .btn {
                             margin-top: fn.rem(20);
                         }
+
                         @media screen and (min-width: 768px) {
                             gap: fn.rem(32);
                         }
